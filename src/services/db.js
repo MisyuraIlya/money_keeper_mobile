@@ -10,12 +10,14 @@ export const dbService = {
         }
       },
     
-      async create(title, price) {
+      async create(title, price, category) {
         try {
     
           const newItem = {
             title,
             price,
+            category,
+            date: new Date()
           };
     
           const existingData = JSON.parse(localStorage.getItem('dbData')) || [];
